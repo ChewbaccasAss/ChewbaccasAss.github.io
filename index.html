@@ -3,22 +3,19 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
-  width: 1280px; /* Scaled from 1920px */
-  height: 720px; /* Scaled from 1080px */
+  width: 1280px; height: 720px;
   background: transparent;
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
 }
 .overlay {
-  width: 1280px; /* Scaled from 1920px */
-  height: 720px; /* Scaled from 1080px */
+  width: 1280px; height: 720px;
   background: rgba(8, 6, 16, 0.95);
   display: flex; flex-direction: column;
   overflow: hidden;
 }
 .banner-wrap {
-  position: relative; width: 100%; height: 113px; /* Scaled from 170px */
-  flex-shrink: 0;
+  position: relative; width: 100%; height: 113px; flex-shrink: 0;
 }
 .banner-wrap img {
   width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block;
@@ -28,31 +25,33 @@ html, body {
   background: linear-gradient(to bottom, rgba(8,6,16,0) 30%, rgba(8,6,16,0.97) 100%);
 }
 .body {
-  flex: 1; padding: 7px 40px 9px; /* Scaled from 10px 60px 14px */
-  display: flex; flex-direction: column; gap: 5px; /* Scaled from 8px */
+  flex: 1; padding: 7px 40px 9px;
+  display: flex; flex-direction: column; gap: 5px;
 }
 .section-label {
-  font-size: 17px; /* Scaled from 26px */
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: 1.3px; /* Scaled from 2px */
+  letter-spacing: 1.3px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.25);
-  margin-bottom: 4px; /* Scaled from 6px */
-  display: flex; align-items: center; gap: 7px; /* Scaled from 10px */
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 .section-label::after {
   content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.07);
 }
 .gift-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); gap: 8px; /* Scaled from 12px */
+  grid-template-columns: repeat(5, 1fr); gap: 8px;
 }
 .card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.09);
-  border-radius: 9px; /* Scaled from 14px */
-  padding: 15px 13px; /* Scaled from 22px 20px */
-  display: flex; align-items: center; gap: 9px; /* Scaled from 14px */
+  border-radius: 9px;
+  padding: 15px 13px;
+  display: flex; align-items: center; gap: 9px;
 }
 .card.ultimate {
   border-color: rgba(180,0,255,0.5);
@@ -63,139 +62,135 @@ html, body {
   background: rgba(232,115,42,0.08);
 }
 .icon {
-  width: 60px; height: 60px; /* Scaled from 90px */
-  border-radius: 9px; /* Scaled from 14px */
+  width: 60px;
+  height: 60px;
+  border-radius: 9px;
   flex-shrink: 0;
   overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.icon img { 
-  width: 60px; height: 60px; /* Scaled from 90px */
-  object-fit: cover; border-radius: 9px; 
-}
-.gift-name { 
-  font-size: 24px; /* Scaled from 36px */
-  font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 5px; 
-}
-.gift-effect { 
-  font-size: 17px; /* Scaled from 26px */
-  color: rgba(255,255,255,0.45); line-height: 1.4; 
-}
+.icon img { width: 60px; height: 60px; object-fit: cover; border-radius: 9px; }
+.gift-name { font-size: 24px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 5px; }
+.gift-effect { font-size: 17px; color: rgba(255,255,255,0.45); line-height: 1.4; }
 .badge {
   display: inline-block;
-  font-size: 15px; /* Scaled from 22px */
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.7px; /* Scaled from 1px */
+  letter-spacing: 0.7px;
   text-transform: uppercase;
-  padding: 4px 11px; /* Scaled from 6px 16px */
-  border-radius: 5px; /* Scaled from 8px */
-  margin-top: 7px; /* Scaled from 10px */
+  padding: 4px 11px; border-radius: 5px; margin-top: 7px;
 }
-.warn { background: rgba(220,140,0,0.2); color: #ffb340; border: 1px solid rgba(220,140,0,0.35); }
-.dngr { background: rgba(220,50,50,0.2); color: #ff7070; border: 1px solid rgba(220,50,50,0.35); }
-.boss { background: rgba(180,0,255,0.2); color: #d966ff; border: 1px solid rgba(180,0,255,0.45); }
-.rust { background: rgba(232,115,42,0.2); color: #e8732a; border: 1px solid rgba(232,115,42,0.4); }
+.warn  { background: rgba(220,140,0,0.2); color: #ffb340; border: 1px solid rgba(220,140,0,0.35); }
+.dngr  { background: rgba(220,50,50,0.2);  color: #ff7070; border: 1px solid rgba(220,50,50,0.35); }
+.boss  { background: rgba(180,0,255,0.2); color: #d966ff; border: 1px solid rgba(180,0,255,0.45); }
+.rust  { background: rgba(232,115,42,0.2); color: #e8732a; border: 1px solid rgba(232,115,42,0.4); }
+
 .servers {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px; /* Scaled from 12px */
+  gap: 8px;
 }
 .server-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 9px; /* Scaled from 14px */
-  padding: 13px 17px; /* Scaled from 20px 26px */
-  display: flex; align-items: center; gap: 9px; /* Scaled from 14px */
+  border-radius: 9px; padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
 .server-dot {
-  width: 12px; height: 12px; /* Scaled from 18px */
-  border-radius: 50%; flex-shrink: 0;
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
   transition: background 0.4s, box-shadow 0.4s;
 }
-.dot-online { background: #4caf50; box-shadow: 0 0 5px rgba(76,175,80,0.7); }
-.dot-offline { background: #e53935; box-shadow: 0 0 5px rgba(229,57,53,0.7); }
-.dot-checking { background: #888; animation: pulse 1s infinite; }
+.dot-online    { background: #4caf50; box-shadow: 0 0 5px rgba(76,175,80,0.7); }
+.dot-offline   { background: #e53935; box-shadow: 0 0 5px rgba(229,57,53,0.7); }
+.dot-checking  { background: #888; animation: pulse 1s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-.server-label { 
-  font-size: 15px; /* Scaled from 22px */
-  color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 3px; 
-}
-.server-name { font-size: 20px; /* Scaled from 30px */ font-weight: 600; color: #fff; }
-.server-meta { font-size: 16px; /* Scaled from 24px */ color: rgba(255,255,255,0.3); margin-top: 3px; }
+
+.server-label { font-size: 15px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 3px; }
+.server-name  { font-size: 20px; font-weight: 600; color: #fff; }
+.server-meta  { font-size: 16px; color: rgba(255,255,255,0.3); margin-top: 3px; }
+
 .footer {
-  display: flex; align-items: center; justify-content: center; gap: 8px; /* Scaled from 12px */
-  font-size: 17px; /* Scaled from 26px */
-  color: rgba(255,255,255,0.18); letter-spacing: 0.7px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 17px; color: rgba(255,255,255,0.18); letter-spacing: 0.7px;
 }
 .tiktok-live {
-  display: flex; align-items: center; gap: 5px; /* Scaled from 8px */
+  display: flex;
+  align-items: center;
+  gap: 5px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px; /* Scaled from 24px */
-  padding: 5px 15px 5px 11px; /* Scaled from 8px 22px 8px 16px */
-  font-size: 19px; /* Scaled from 28px */
-  font-weight: 600; color: #fff;
+  border-radius: 16px;
+  padding: 5px 15px 5px 11px;
+  font-size: 19px; font-weight: 600; color: #fff;
   transition: border-color 0.4s;
 }
-.tiktok-live.is-live { border-color: rgba(255,50,80,0.6); background: rgba(255,50,80,0.08); }
-.tiktok-live.is-offline { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); }
+.tiktok-live.is-live     { border-color: rgba(255,50,80,0.6); background: rgba(255,50,80,0.08); }
+.tiktok-live.is-offline  { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); }
+
 .live-dot {
-  width: 9px; height: 9px; /* Scaled from 14px */
-  border-radius: 50%; background: #888; flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #888;
+  flex-shrink: 0;
   transition: background 0.4s, box-shadow 0.4s;
 }
-.live-dot.on { background: #ff3250; box-shadow: 0 0 5px rgba(255,50,80,0.8); animation: livepulse 1.5s infinite; }
+.live-dot.on  { background: #ff3250; box-shadow: 0 0 5px rgba(255,50,80,0.8); animation: livepulse 1.5s infinite; }
 .live-dot.off { background: #555; }
 @keyframes livepulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
 </style>
 </head><body>
 <div class="overlay">
   <div class="banner-wrap">
-    <img src="data:image/png;base64,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" />
+    <img src="data:image/png;base64,...(original-base64-data)..." alt="Banner">
     <div class="banner-overlay"></div>
   </div>
 
   <div class="body">
-    <div class="section-label">Gifts & Effects</div>
+    <div class="section-label">Gift Interaction Options</div>
     <div class="gift-grid">
-      <div class="card rust-ultimate">
-        <div class="icon"><img src="https://files.facepunch.com/rust/item/supply_signal.png"></div>
-        <div class="details">
+      <div class="card">
+        <div class="icon"><img src="https://files.facepunch.com/rust/item/supply.signal_512.png"></div>
+        <div>
           <div class="gift-name">Supply Signal</div>
-          <div class="gift-effect">Calls an Airdrop at the player's location.</div>
-          <span class="badge rust">RUST ULTIMATE</span>
+          <div class="gift-effect">Calls a supply drop to the player's location.</div>
+          <div class="badge warn">Rare</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><img src="https://files.facepunch.com/rust/item/arrow.wooden_512.png"></div>
+        <div>
+          <div class="gift-name">Arrow Storm</div>
+          <div class="gift-effect">Arrows rain down around the player.</div>
+          <div class="badge dngr">Danger</div>
         </div>
       </div>
       <div class="card ultimate">
-        <div class="icon"><img src="https://static.wikia.nocookie.net/tiktok/images/6/60/Lion.png"></div>
-        <div class="details">
-          <div class="gift-name">Lion</div>
-          <div class="gift-effect">Summons a powerful Boss with custom loot.</div>
-          <span class="badge boss">SERVER BOSS</span>
+        <div class="icon"><img src="https://files.facepunch.com/rust/item/explosive.timed_512.png"></div>
+        <div>
+          <div class="gift-name">C4 Surprise</div>
+          <div class="gift-effect">Spawns an armed C4 at the player's feet.</div>
+          <div class="badge boss">Ultimate</div>
+        </div>
+      </div>
+      <div class="card rust-ultimate">
+        <div class="icon"><img src="https://files.facepunch.com/rust/item/hazmatsuit_512.png"></div>
+        <div>
+          <div class="gift-name">Hazmat Suit</div>
+          <div class="gift-effect">Gives the player a protective hazmat suit.</div>
+          <div class="badge rust">Utility</div>
         </div>
       </div>
       <div class="card">
-        <div class="icon"><img src="https://static.wikia.nocookie.net/tiktok/images/b/ba/Galaxy.png"></div>
-        <div class="details">
-          <div class="gift-name">Galaxy</div>
-          <div class="gift-effect">Server-wide Meteor Shower event.</div>
-          <span class="badge dngr">EXTREME DANGER</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon"><img src="https://static.wikia.nocookie.net/tiktok/images/4/41/Fire_Phoenix.png"></div>
-        <div class="details">
-          <div class="gift-name">Phoenix</div>
-          <div class="gift-effect">Sets the target on fire for 30 seconds.</div>
-          <span class="badge dngr">DANGER</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon"><img src="https://static.wikia.nocookie.net/tiktok/images/5/5b/Rose.png"></div>
-        <div class="details">
-          <div class="gift-name">Rose</div>
-          <div class="gift-effect">Gives the player a single bandage.</div>
-          <span class="badge warn">HELPFUL</span>
+        <div class="icon"><img src="https://files.facepunch.com/rust/item/medical.syringe_512.png"></div>
+        <div>
+          <div class="gift-name">Med Syringe</div>
+          <div class="gift-effect">Provides instant healing and health boost.</div>
+          <div class="badge warn">Common</div>
         </div>
       </div>
     </div>
@@ -203,36 +198,36 @@ html, body {
     <div class="section-label">Server Status</div>
     <div class="servers">
       <div class="server-card">
-        <div id="dot-main" class="server-dot dot-checking"></div>
-        <div class="server-info">
-          <div class="server-label">Main Server</div>
+        <div id="server-dot-1" class="server-dot dot-checking"></div>
+        <div>
+          <div class="server-label">Rust Server #1</div>
           <div class="server-name">RattyTatty 2X</div>
-          <div id="meta-main" class="server-meta">Checking status...</div>
+          <div id="server-meta-1" class="server-meta">Checking...</div>
         </div>
       </div>
       <div class="server-card">
-        <div id="dot-creative" class="server-dot dot-checking"></div>
-        <div class="server-info">
-          <div class="server-label">Creative</div>
-          <div class="server-name">RT Build & PvP</div>
-          <div id="meta-creative" class="server-meta">Checking status...</div>
+        <div id="server-dot-2" class="server-dot dot-checking"></div>
+        <div>
+          <div class="server-label">Rust Server #2</div>
+          <div class="server-name">RattyTatty 5X</div>
+          <div id="server-meta-2" class="server-meta">Checking...</div>
         </div>
       </div>
       <div class="server-card">
-        <div id="dot-event" class="server-dot dot-checking"></div>
-        <div class="server-info">
-          <div class="server-label">Event Server</div>
-          <div class="server-name">RT Minigames</div>
-          <div id="meta-event" class="server-meta">Checking status...</div>
+        <div id="server-dot-3" class="server-dot dot-checking"></div>
+        <div>
+          <div class="server-label">Rust Server #3</div>
+          <div class="server-name">RattyTatty Vanilla</div>
+          <div id="server-meta-3" class="server-meta">Checking...</div>
         </div>
       </div>
     </div>
 
     <div class="footer">
-      <span>Gifts triggered in TikTok Live directly affect the Rust server in real-time!</span>
-      <div id="tiktok-badge" class="tiktok-live">
-        <div id="live-dot" class="live-dot"></div>
-        <span id="live-label">Checking TikTok...</span>
+      <span>TIKTOK LIVE STATUS:</span>
+      <div id="tiktok-badge" class="tiktok-live is-offline">
+        <div id="live-dot" class="live-dot off"></div>
+        <span id="live-label">Checking...</span>
       </div>
     </div>
   </div>
@@ -243,11 +238,11 @@ async function checkServer(ip, port, dotId, metaId) {
   const dot = document.getElementById(dotId);
   const meta = document.getElementById(metaId);
   try {
-    const res = await fetch(`https://api.rust-servers.info/info/${ip}_${port}`, { signal: AbortSignal.timeout(10000) });
+    const res = await fetch(`https://api.rust-servers.info/info/${ip}:${port}`);
     const data = await res.json();
     if (data && data.online) {
       const players = data.players || 0;
-      const max = data.maxplayers || 0;
+      const max = data.max_players || 0;
       dot.className = 'server-dot dot-online';
       meta.textContent = players + ' / ' + max + ' players online';
     } else {
@@ -280,18 +275,23 @@ async function checkTikTokLive() {
     }
   } catch(e) {
     dot.className = 'live-dot off';
-    label.textContent = 'Status unavailable';
+    label.textContent = 'Status unknown';
+    badge.className = 'tiktok-live is-offline';
   }
 }
 
-function updateAll() {
-  checkServer('147.189.168.125', '28015', 'dot-main', 'meta-main');
-  checkServer('147.189.168.125', '28025', 'dot-creative', 'meta-creative');
-  checkServer('147.189.168.125', '28035', 'dot-event', 'meta-event');
+// Update every 30 seconds
+setInterval(() => {
+  checkServer('127.0.0.1', '28015', 'server-dot-1', 'server-meta-1');
+  checkServer('127.0.0.1', '28016', 'server-dot-2', 'server-meta-2');
+  checkServer('127.0.0.1', '28017', 'server-dot-3', 'server-meta-3');
   checkTikTokLive();
-}
+}, 30000);
 
-updateAll();
-setInterval(updateAll, 60000);
+// Initial check
+checkServer('127.0.0.1', '28015', 'server-dot-1', 'server-meta-1');
+checkServer('127.0.0.1', '28016', 'server-dot-2', 'server-meta-2');
+checkServer('127.0.0.1', '28017', 'server-dot-3', 'server-meta-3');
+checkTikTokLive();
 </script>
 </body></html>
