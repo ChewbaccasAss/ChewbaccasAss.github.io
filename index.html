@@ -266,7 +266,7 @@ html, body {
         <div class="server-dot dot-checking" id="rust-dot"></div>
         <div>
           <div class="server-label">Rust</div>
-          <div class="server-name">&#9733; Ratty Tatty 3X &#9733; |Kits|SkinBox|</div>
+          <div class="server-name">&#9733; Ratty Tatty 2X &#9733; |Kits|SkinBox|</div>
           <div class="server-meta" id="rust-meta">Checking...</div>
         </div>
       </div>
@@ -304,9 +304,9 @@ async function checkRust() {
   const dot = document.getElementById('rust-dot');
   const meta = document.getElementById('rust-meta');
   try {
-    const res = await fetch('https://api.battlemetrics.com/servers?filter[search]=Ratty+Tatty+3X&filter[game]=rust&fields[server]=name,status,players,maxPlayers', { signal: AbortSignal.timeout(8000) });
+    const res = await fetch('https://api.battlemetrics.com/servers?filter[search]=Ratty+Tatty+2X&filter[game]=rust&fields[server]=name,status,players,maxPlayers', { signal: AbortSignal.timeout(8000) });
     const data = await res.json();
-    const server = (data.data || []).find(s => s.attributes.name && s.attributes.name.includes('Ratty Tatty 3X'));
+    const server = (data.data || []).find(s => s.attributes.name && s.attributes.name.includes('Ratty Tatty 2X'));
     if (server && server.attributes.status === 'online') {
       dot.className = 'server-dot dot-online';
       meta.textContent = server.attributes.players + ' / ' + server.attributes.maxPlayers + ' players online';
